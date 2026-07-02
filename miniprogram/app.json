@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/index",
+    "pages/target/index",
+    "pages/history/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundColor": "#F7F9FA",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F7F9FA",
+    "navigationBarTitleText": "每日热量记录",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#20C997",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "饮食记录"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

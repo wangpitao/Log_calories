@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="title">每日目标</view>
+  <view class="subtitle">用于首页和历史报表的达标计算</view>
+
+  <view class="form-card">
+    <view class="field">
+      <view class="label">热量目标</view>
+      <view class="input-row">
+        <input class="input" type="number" value="{{goal.calories}}" data-field="calories" bindinput="onGoalInput" />
+        <text class="unit">kcal</text>
+      </view>
+    </view>
+    <view class="field">
+      <view class="label">蛋白质目标</view>
+      <view class="input-row">
+        <input class="input" type="number" value="{{goal.protein}}" data-field="protein" bindinput="onGoalInput" />
+        <text class="unit">g</text>
+      </view>
+    </view>
+    <view class="field">
+      <view class="label">脂肪目标</view>
+      <view class="input-row">
+        <input class="input" type="number" value="{{goal.fat}}" data-field="fat" bindinput="onGoalInput" />
+        <text class="unit">g</text>
+      </view>
+    </view>
+    <view class="field">
+      <view class="label">碳水目标</view>
+      <view class="input-row">
+        <input class="input" type="number" value="{{goal.carbs}}" data-field="carbs" bindinput="onGoalInput" />
+        <text class="unit">g</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="save-btn" loading="{{saving}}" bindtap="saveGoal">保存目标</button>
+</view>

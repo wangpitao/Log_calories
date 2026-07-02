@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="title">近 7 天</view>
+  <view class="subtitle">目标 {{goal.calories}} kcal / 天</view>
+
+  <view class="summary-grid">
+    <view class="summary-item">
+      <text class="summary-value">{{summary.avgCalories}}</text>
+      <text class="summary-label">日均热量</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-value">{{summary.trackedDays}}</text>
+      <text class="summary-label">记录天数</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-value">{{summary.totalRecords}}</text>
+      <text class="summary-label">餐食记录</text>
+    </view>
+  </view>
+
+  <view class="chart-card">
+    <view class="card-title">每日摄入</view>
+    <view wx:for="{{days}}" wx:key="date" class="day-row">
+      <view class="day-date">{{item.label}}</view>
+      <view class="bar-track">
+        <view class="bar-fill" style="width: {{item.percent}}%;"></view>
+      </view>
+      <view class="day-cal">{{item.calories}}</view>
+    </view>
+  </view>
+
+  <view class="detail-list">
+    <view wx:for="{{days}}" wx:key="date" class="detail-item">
+      <view class="detail-head">
+        <text class="detail-date">{{item.label}}</text>
+        <text class="detail-count">{{item.records}} 餐</text>
+      </view>
+      <view class="detail-main">
+        <text class="detail-cal">{{item.calories}} kcal</text>
+        <text class="detail-macro">蛋 {{item.protein}}g  脂 {{item.fat}}g  碳 {{item.carbs}}g</text>
+      </view>
+    </view>
+  </view>
+</view>

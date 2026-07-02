@@ -1,0 +1,154 @@
+page {
+  background-color: #F2F2F7;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  padding: 40rpx 30rpx;
+  padding-bottom: 60rpx;
+}
+
+/* Header Card */
+.header-card {
+  background: linear-gradient(145deg, #30D6A8, #12B886);
+  border-radius: 34rpx;
+  padding: 60rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20rpx 56rpx rgba(32, 201, 151, 0.24);
+  margin-bottom: 50rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 180rpx !important;
+  height: 180rpx !important;
+  border-radius: 90rpx;
+  background-color: #fff;
+  box-shadow: 0 10rpx 24rpx rgba(0,0,0,0.14);
+  margin-bottom: 30rpx;
+  border: 6rpx solid #fff;
+  position: relative;
+}
+.avatar-wrapper::after {
+  border: none;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  border: 4rpx solid #fff;
+}
+
+.nickname-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10rpx 40rpx;
+  border-radius: 50rpx;
+  margin-bottom: 16rpx;
+}
+.nickname-input {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  min-width: 250rpx;
+}
+.nickname-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.motto {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Stats Card */
+.stats-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 34rpx;
+  padding: 40rpx 0;
+  margin-bottom: 50rpx;
+  box-shadow: 0 18rpx 50rpx rgba(31, 35, 41, 0.06);
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #ECECF0;
+}
+.stat-item:last-child {
+  border-right: none;
+}
+.stat-value {
+  font-size: 56rpx;
+  font-weight: 900;
+  color: #1D1D1F;
+  margin-bottom: 10rpx;
+}
+.stat-label {
+  font-size: 26rpx;
+  color: #8E8E93;
+}
+
+/* Menu List */
+.menu-list {
+  background: #ffffff;
+  border-radius: 34rpx;
+  padding: 10rpx 40rpx;
+  box-shadow: 0 18rpx 50rpx rgba(31, 35, 41, 0.06);
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #EFEFF4;
+}
+.menu-item:last-child {
+  border-bottom: none;
+}
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+.menu-icon {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  background: rgba(32, 201, 151, 0.12);
+  color: #10A37F;
+  font-size: 24rpx;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+.menu-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #1D1D1F;
+}
+.arrow {
+  color: #C7C7CC;
+  font-size: 32rpx;
+  font-weight: bold;
+}

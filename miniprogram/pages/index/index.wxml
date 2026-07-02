@@ -1,0 +1,112 @@
+<view class="container">
+  
+  <view class="header-section">
+    <view class="greeting">今天吃得怎么样？</view>
+    <view class="date-label">{{currentDate}}</view>
+  </view>
+
+  <view class="summary-card">
+    <view class="summary-main">
+      <view class="cal-circle">
+        <text class="cal-number">{{todayStats.calories}}</text>
+        <text class="cal-unit">千卡</text>
+      </view>
+      <view class="summary-copy">
+        <view class="summary-label">今日摄入</view>
+        <view class="summary-note">拍照或文字记录每餐</view>
+      </view>
+    </view>
+    
+    <view class="macros-row">
+      <view class="macro-item">
+        <text class="m-val">{{todayStats.protein}}g</text>
+        <text class="m-label">蛋白质</text>
+      </view>
+      <view class="macro-item">
+        <text class="m-val">{{todayStats.fat}}g</text>
+        <text class="m-label">脂肪</text>
+      </view>
+      <view class="macro-item">
+        <text class="m-val">{{todayStats.carbs}}g</text>
+        <text class="m-label">碳水</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="input-section">
+    <view class="input-title">快速记录餐食</view>
+    <view class="input-row">
+      <input class="meal-input" placeholder="输入食物，如：一碗米饭和红烧肉" value="{{mealText}}" bindinput="onInputMeal" />
+      <button class="meal-btn" bindtap="submitMealText">估算</button>
+    </view>
+  </view>
+
+  <view class="records-container">
+    <view class="section-title">
+      <text>今日餐食</text>
+    </view>
+    
+    <view wx:if="{{mealRecords.length === 0}}" class="empty-state">
+      <text class="empty-tip">今天还没有记录，快点击下方按钮拍照吧！</text>
+    </view>
+    
+    <view class="record-list" wx:else>
+      <view class="record-item" wx:for="{{mealRecords}}" wx:key="_id">
+        <image wx:if="{{item.displayImage && !item.imageLoadFailed}}" class="record-img" src="{{item.displayImage}}" mode="aspectFill" data-index="{{index}}" binderror="onRecordImageError"></image>
+        <view wx:else class="record-img placeholder-img">
+          <text>餐</text>
+        </view>
+        <view class="record-info">
+          <view class="record-name">{{item.foodName}}</view>
+          <view class="record-macros">蛋:{{item.protein}}g 脂:{{item.fat}}g 碳:{{item.carbs}}g</view>
+        </view>
+        <view class="record-side">
+          <view class="record-cal">
+            <text class="record-cal-val">{{item.calories}}</text> kcal
+          </view>
+          <view class="record-edit" data-index="{{index}}" bindtap="openEditMeal">编辑</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{showEditModal}}" class="modal-mask" catchtap="closeEditMeal">
+    <view class="edit-panel" catchtap="noop">
+      <view class="edit-title">编辑餐食</view>
+      <view class="field-group">
+        <view class="field-label">食物名称</view>
+        <input class="field-input" value="{{editingMeal.foodName}}" data-field="foodName" bindinput="onEditMealInput" placeholder="例如：番茄鸡蛋盖饭" />
+      </view>
+      <view class="field-grid">
+        <view class="field-group compact">
+          <view class="field-label">热量 kcal</view>
+          <input class="field-input" type="number" value="{{editingMeal.calories}}" data-field="calories" bindinput="onEditMealInput" />
+        </view>
+        <view class="field-group compact">
+          <view class="field-label">蛋白质 g</view>
+          <input class="field-input" type="number" value="{{editingMeal.protein}}" data-field="protein" bindinput="onEditMealInput" />
+        </view>
+        <view class="field-group compact">
+          <view class="field-label">脂肪 g</view>
+          <input class="field-input" type="number" value="{{editingMeal.fat}}" data-field="fat" bindinput="onEditMealInput" />
+        </view>
+        <view class="field-group compact">
+          <view class="field-label">碳水 g</view>
+          <input class="field-input" type="number" value="{{editingMeal.carbs}}" data-field="carbs" bindinput="onEditMealInput" />
+        </view>
+      </view>
+      <view class="edit-actions">
+        <button class="danger-btn" bindtap="deleteEditedMeal">删除</button>
+        <view class="edit-spacer"></view>
+        <button class="ghost-btn" bindtap="closeEditMeal">取消</button>
+        <button class="save-btn" bindtap="saveEditedMeal">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 悬浮拍照按钮 -->
+  <view class="fab" bindtap="takePhoto" hover-class="fab-hover">
+    <image class="fab-icon" src="../../images/camera.svg"></image>
+  </view>
+
+</view>

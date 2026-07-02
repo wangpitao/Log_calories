@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "openapi": [
+      "wxacode.get",
+      "security.msgSecCheck",
+      "security.imgSecCheck"
+    ]
+  }
+}

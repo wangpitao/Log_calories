@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="brand-card">
+    <view class="brand-name">每日热量记录</view>
+    <view class="brand-desc">拍照或文字记录每餐，快速估算热量和营养结构。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">记录方式</view>
+    <view class="section-text">支持拍照识别和文字补录。图片识别结果为系统估算，保存前后都可以在首页编辑。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">数据说明</view>
+    <view class="section-text">热量、蛋白质、脂肪、碳水为参考值，适合做日常饮食趋势管理，不替代医生或营养师建议。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">隐私与存储</view>
+    <view class="section-text">餐食照片和记录会保存到你配置的云开发环境中。正式发布前建议开启按用户隔离的数据权限。</view>
+  </view>
+
+  <view class="version">版本 1.0.0</view>
+</view>

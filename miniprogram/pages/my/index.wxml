@@ -1,0 +1,51 @@
+<view class="container">
+  <!-- 头像昵称部分 -->
+  <view class="header-card">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{userInfo.avatarUrl || defaultAvatar}}"></image>
+      <view class="edit-icon">✎</view>
+    </button>
+    <view class="nickname-wrapper">
+      <input type="nickname" class="nickname-input" placeholder="点击设置您的昵称" value="{{userInfo.nickName}}" bindblur="onInputNickname" bindchange="onInputNickname" bindinput="onInputNickname" />
+    </view>
+    <view class="motto">吃得健康，活得漂亮</view>
+  </view>
+
+  <!-- 统计数据卡片 -->
+  <view class="stats-card">
+    <view class="stat-item">
+      <text class="stat-value">{{totalRecords}}</text>
+      <text class="stat-label">记录餐数</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{totalDays}}</text>
+      <text class="stat-label">坚持天数</text>
+    </view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="goTarget">
+      <view class="menu-left">
+        <text class="menu-icon">目</text>
+        <text class="menu-text">目标摄入设定</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="goHistory">
+      <view class="menu-left">
+        <text class="menu-icon">报</text>
+        <text class="menu-text">历史数据报表</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="goAbout">
+      <view class="menu-left">
+        <text class="menu-icon">关</text>
+        <text class="menu-text">关于我们</text>
+      </view>
+      <text class="arrow">></text>
+    </view>
+  </view>
+  
+</view>
